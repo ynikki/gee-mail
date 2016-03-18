@@ -14,22 +14,31 @@ body{
 
 }
 
-#table{
+table{
 	width:auto;
+	border: 2px solid #464440;
+}
+
+th{
+	background-color: #ffecc7;
 }
 
 th, td{
 	padding: 7px 10px 10px 10px;
 }
-th{
+
+#talbe th{
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	font-size: 90%;
-	border-bottom: 2px solid:#464440;
 	text-align: left;
 }
 
 tr.mail{
 	background-color: #B5B4B2;
 	text-align: left;
+}
+
+td:hover{
+	background-color: #F7F7F7;
 }

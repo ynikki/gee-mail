@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic);
+
+body{
+	background-color: #ffff;
+	font-family:'Open Sans Condensed', sans-serif;
+	padding: 20px;
+	margin: 0;
+	max-width: 1290px;
+	margin: auto;
+}
+
+#welcome{
+	text-align: left;
+
+}
+
+#table{
+	width:auto;
+}
+
+th, td{
+	padding: 7px 10px 10px 10px;
+}
+th{
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 90%;
+	border-bottom: 2px solid:#464440;
+	text-align: left;
+}
+
+tr.mail{
+	background-color: #B5B4B2;
+	text-align: left;
+}

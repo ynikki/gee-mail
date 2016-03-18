@@ -1,9 +1,12 @@
 <html>
 	<head>
+	<meta charset="UTF-8">
+	<title>GeeMail</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
+
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
@@ -11,8 +14,24 @@
     </script>
 	</head>
 	<body>
+		<div id="welcome">
+					<h1>GeeMail</h1>
+			<p>Welcome to GeeMail</p>
 		<div class="container" id="main">
-			Build Me!
+			<table class="table">
+			<tr>
+				<th>Date</th>
+				<th>Sender</th>
+				<th>Subject</th>
+			</tr>
+			<tr class="mail">
+				<td id="date"></td>
+				<td id="sender"></td>
+				<td id="subject"></td>
+			</tr>
+			</table>
 		</div>
+
+		
 	</body>
 </html>

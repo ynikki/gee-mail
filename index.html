@@ -7,6 +7,24 @@
     <script>
       window.onload = function(){
 
+      	function email(messages){
+      		for(var i=0; i<messages.length;i++){
+      			console.log(messages[i]);
+      			console.log(messages[i].subject);
+      			console.log(messages[i].sender);
+      			console.log(messages[i].body);
+      			console.log(messages[i].date);
+      		}
+      	}
+
+      	email(geemails);
+
+      	function getElements(){
+      		var emailbox = document.getElementsByName("emailbox");
+      		document.getElementsById("mail").innerHTML = "geemails";
+      	}
+
+     document.body.appendChild(getElements);
 
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -26,7 +44,7 @@
 				<th>Sender</th>
 				<th>Subject</th>
 			</tr>
-			<tr class="mail">
+			<tr class="box" id="mail" name="emailbox">
 				<td id="date"></td>
 				<td id="sender"></td>
 				<td id="subject"></td>

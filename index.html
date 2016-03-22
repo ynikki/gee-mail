@@ -17,14 +17,16 @@
       		}
       	}
 
-      	email(geemails);
+ 		email(geemails);
 
       	function getElements(){
-      		var emailbox = document.getElementsByName("emailbox");
-      		document.getElementsById("mail").innerHTML = "geemails";
+      		var emailbox = document.getElementsByTagName("emailbox");
+      		var emaildate = document.getElementById("date").innerHTML = emaildate;
+      		var emailsender = document.getElementById("sender").innerHTML = emailsender;
+      		var emailsubject = document.getElementById("subject").innerHTML = emailsubject;
       	}
 
-     document.body.appendChild(getElements);
+      	getElements();
 
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -44,7 +46,7 @@
 				<th>Sender</th>
 				<th>Subject</th>
 			</tr>
-			<tr class="box" id="mail" name="emailbox">
+			<tr class="box" name="emailbox">
 				<td id="date"></td>
 				<td id="sender"></td>
 				<td id="subject"></td>

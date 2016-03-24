@@ -7,11 +7,21 @@
     <script>
       window.onload = function(){
 
+      	//var subjectElement = "messages[i].subject";
+      	var bodyElement = "messages[i].body";
+      	var dateElement = "messages[i].date";
+
+
+      	
       	function email(messages){
       		for(var i=0; i<messages.length;i++){
-      			console.log(messages[i]);
+      			var subjectElement = "messages[i].subject";
+      			document.getElementById('geemessages').innerHTML=messages[i].subject;
       			console.log(messages[i].subject);
+      			var bodyElement = "messages[i].body";
+      			document.getElementById('geemessages').innerHTML=messages[i].body;
       			console.log(messages[i].sender);
+      			//var bodyElement = "messages[i].body";
       			console.log(messages[i].body);
       			console.log(messages[i].date);
       		}
@@ -19,14 +29,20 @@
 
  		email(geemails);
 
-      	function getElements(){
-      		var emailbox = document.getElementsByTagName("emailbox");
-      		var emaildate = document.getElementById("date").innerHTML = emaildate;
-      		var emailsender = document.getElementById("sender").innerHTML = emailsender;
-      		var emailsubject = document.getElementById("subject").innerHTML = emailsubject;
-      	}
+     var messages = document.getElementById('geemessages');
 
-      	getElements();
+     	for(var i=0; messages.length; i++){
+     		console.log(messages[i]);
+     		messages[i].addEventListener('load',messages);
+     	}
+
+
+     var thirdDiv=document.createElement('div');
+
+     thirdDiv.appendChild(messages);
+
+     document.body.appendChild(thirdDiv);
+
 
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -40,18 +56,8 @@
 					<h1>GeeMail</h1>
 			<p>Welcome to GeeMail</p>
 		<div class="container" id="main">
-			<table class="table">
-			<tr>
-				<th>Date</th>
-				<th>Sender</th>
-				<th>Subject</th>
-			</tr>
-			<tr class="box" name="emailbox">
-				<td id="date"></td>
-				<td id="sender"></td>
-				<td id="subject"></td>
-			</tr>
-			</table>
+		<div class="container2" id="geemessages">
+		</div>
 		</div>
 
 		

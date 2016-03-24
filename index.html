@@ -8,38 +8,48 @@
       window.onload = function(){
 
       	//var subjectElement = "messages[i].subject";
-      	var bodyElement = "messages[i].body";
-      	var dateElement = "messages[i].date";
+      	//var bodyElement = "messages[i].body";
+      	//var dateElement = "messages[i].date";
 
 
       	
       	function email(messages){
       		for(var i=0; i<messages.length;i++){
       			var subjectElement = "messages[i].subject";
-      			document.getElementById('geemessages').innerHTML=messages[i].subject;
+      			document.getElementById('main').innerHTML=messages[i].subject;
       			console.log(messages[i].subject);
       			var bodyElement = "messages[i].body";
       			document.getElementById('geemessages').innerHTML=messages[i].body;
-      			console.log(messages[i].sender);
-      			//var bodyElement = "messages[i].body";
       			console.log(messages[i].body);
+      			var dateElement = "messages[i].date";
+      			document.getElementById('geemessages').innerHTML=messages[i].date;
       			console.log(messages[i].date);
+      			var senderElement = "messages[i].sender";
+      			document.getElementById('sender').innerHTML=messages[i].sender;
+      			console.log(messages[i].sender);
       		}
+      		return messages;
       	}
 
  		email(geemails);
 
-     var messages = document.getElementById('geemessages');
+     var messages = document.getElementById('main');
 
      	for(var i=0; messages.length; i++){
      		console.log(messages[i]);
-     		messages[i].addEventListener('load',messages);
+     		messages[i].addEventListener('click',messages);
      	}
 
 
      var thirdDiv=document.createElement('div');
+     var firstSpan=document.createElement('span');
+     var secondSpan=document.createElement('span');
+     var thirdSpan=document.createElement('span');
+
+     firstSpan.id="subject";
 
      thirdDiv.appendChild(messages);
+     thirdDiv.appendChild(firstSpan);
 
      document.body.appendChild(thirdDiv);
 
@@ -55,11 +65,9 @@
 		<div id="welcome">
 					<h1>GeeMail</h1>
 			<p>Welcome to GeeMail</p>
-		<div class="container" id="main">
-		<div class="container2" id="geemessages">
-		</div>
-		</div>
-
+		<div class="container" id="main"></div>
+		<div class="container2" id="sender"></div>
+		<div class="container3" id="geemessages"></div>
 		
 	</body>
 </html>

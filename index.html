@@ -1,52 +1,52 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>GeeMail</title>
+	<title>GeeMail Inbox</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+       <link rel="icon" href="/img/favicon.ico" type="image/gif"> 
     <script>
       window.onload = function(){
 
       	function email(messages){
-      		for(var i=0; i<messages.length;i++){
-      			var subjectElement = "messages[i].subject";
-      			document.getElementById('main').innerHTML=messages[i].subject;
-      			console.log(messages[i].subject);
-      			var bodyElement = "messages[i].body";
-      			document.getElementById('subjectmessages').innerHTML=messages[i].body;
-      			console.log(messages[i].body);
-      			var dateElement = "messages[i].date";
-      			document.getElementById('geedate').innerHTML=messages[i].date;
-      			console.log(messages[i].date);
-      			var senderElement = "messages[i].sender";
-      			document.getElementById('sender').innerHTML=messages[i].sender;
-      			console.log(messages[i].sender);
+      		for(var i=0; i<messages.length; i++){
+            console.log(messages[i]);
+            console.log(messages[i].subject);
+            console.log(messages[i].body);
+            console.log(messages[i].date);
+            console.log(messages[i].sender);
+
+            var emailElement = document.createElement('div');
+            emailElement.className='mail';
+            document.getElementById('main').appendChild(emailElement);
+
+            var senderElement = document.createElement('div');
+            senderElement.className='sender';
+            senderElement.innerHTML=messages[i].sender;
+            emailElement.appendChild(senderElement);
+
+            var subjectElement = document.createElement('div');
+            subjectElement.className='subject';
+            subjectElement.innerHTML=messages[i].subject;
+            senderElement.appendChild(subjectElement);
+
+            var bodyElement = document.createElement('div');
+            bodyElement.className='body';
+            bodyElement.innerHTML=messages[i].body;
+            senderElement.appendChild(bodyElement);
+
+            var dateElement = document.createElement('div');
+            dateElement.className='date';
+            dateElement.innerHTML=messages[i].date;
+            senderElement.appendChild(dateElement);
+           
       		}
       		return messages;
       	}
 
  		email(geemails);
 
-     var messages = document.getElementById('main');
-
-     	for(var i=0; messages.length; i++){
-     		console.log(messages[i]);
-     		messages[i].addEventListener('click',messages);
-     	}
-
-
-     var thirdDiv=document.createElement('div');
-     var firstSpan=document.createElement('span');
-     var secondSpan=document.createElement('span');
-     var thirdSpan=document.createElement('span');
-
-     firstSpan.id="subject";
-
-     thirdDiv.appendChild(messages);
-
-     document.body.appendChild(thirdDiv);
-
-
+      document.getElementById('body').addEventListener('click',email);
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
@@ -59,10 +59,7 @@
 					<h1>GeeMail</h1>
 			<p>Welcome to GeeMail</p>
 		<div class="container" id="main"></div>
-		<div class="container2" id="geedate"></div>
-		<div class="container3" id="sender"></div>
-		<div class="container4" id="geemessages"></div>
-		<div class="container5" id="subjectmessages"></div>
+
 		
 	</body>
 </html>

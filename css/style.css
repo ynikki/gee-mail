@@ -11,34 +11,12 @@ body{
 
 #welcome{
 	text-align: left;
-
+	background-image: url('/img/geemail.gif');
+	background-repeat: no-repeat;
+	background-position: top-left;
+	display: inline-block;
+	align: left;
 }
-
-table{
-	width:auto;
-	border: 2px solid #464440;
-}
-
-th{
-	background-color: #ffecc7;
-}
-
-th, td{
-	padding: 7px 10px 10px 10px;
-}
-
-#talbe th{
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-size: 90%;
-	text-align: left;
-}
-
-tr.mail{
-	background-color: #B5B4B2;
-	text-align: left;
-}
-
-td:hover{
-	background-color: #F7F7F7;
+#welcomemsg{
+	margin-top: 70px;
 }

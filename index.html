@@ -46,7 +46,52 @@
 
  		email(geemails);
 
-      document.getElementById('body').addEventListener('click',email);
+
+      document.getElementById('main').addEventListener('click', function(){
+         toggle(document.querySelectorAll('.body'));
+      });
+
+      function toggle(elements, specifiedDisplay){
+         var msg, index;
+
+         elements = elements.length ? elements:[elements];
+         for(index=0; index<elements.length; index++){
+            msg=elements[index];
+
+            if(isElementHidden(msg)){
+               msg.style.display='';
+
+               if(isElementHidden(msg)){
+                  msg.style.display=specifiedDisplay || 'block';
+               }
+            }else{
+               msg.style.display='none';
+            }
+
+            }
+               function isElementHidden(msg){
+               return window.getComputedStyle(msg,null).getPropertyValue('display') === 'none';
+         }
+      }
+
+      toggle(geemails);
+
+
+     /* function revealEmail(hidden){
+         if(hidden.style.display == 'block')
+            hidden.style.display = 'none';
+         else
+            hidden.style.display = 'block';
+
+          var hiddenElements = document.querySelectorAll('.body');
+          hiddenElements.addEventListener('click',revealEmail,useCapture);
+
+          return hidden;
+      }
+
+      revealEmail(geemails);*/
+
+
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
@@ -56,9 +101,9 @@
 	</head>
 	<body>
 		<div id="welcome">
-					<h1>GeeMail</h1>
-			<p>Welcome to GeeMail</p>
+			<p id ="welcomemsg">Welcome to GeeMail</p>
 		<div class="container" id="main"></div>
+      <!-- <a href="body" onclick="toggle_visibility('body');"></a> -->
 
 		
 	</body>

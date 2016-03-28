@@ -48,7 +48,7 @@
 
 
       document.getElementById('main').addEventListener('click', function(){
-         toggle(document.querySelectorAll('.body'));
+         toggle(document.querySelector('.body'));
       });
 
       function toggle(elements, specifiedDisplay){
@@ -75,6 +75,28 @@
       }
 
       toggle(geemails);
+
+
+      function counter(messages){
+         var total=0;
+         for(var j=0; j<messages.length; j++){
+            total += messages[j];
+
+            var lastContainer = document.getElementById('main');
+            lastContainer = document.createElement('div');
+            lastContainer.id='last';
+            main.appendChild(lastContainer);
+
+            var emailCounter = document.createElement('div');
+            emailCounter.id='emailcount';
+            lastContainer.appendChild(emailCounter);
+
+            document.getElementById('emailcount').innerHTML=total;
+         }
+         return total;
+      }
+
+      counter(geemails);
 
 
      /* function revealEmail(hidden){

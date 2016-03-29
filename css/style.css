@@ -11,16 +11,28 @@ body{
 
 #welcome{
 	text-align: left;
-	background-image: url('/img/geemail.gif');
+	/*background-image: url('/img/geemail.gif');
 	background-repeat: no-repeat;
 	background-position: top-left;
 	display: inline-block;
-	align: left;
+	align: left;*/
 }
 #welcomemsg{
 	margin-top: 70px;
 }
 
-.target{
+.sender, .subjet, .date{
+	display: inline-block;
+}
+
+/*.target{
 	display: none;
+}*/
+
+div.body{
+	display: none;
+}
+
+div.body.show{
+	display: block;
 }

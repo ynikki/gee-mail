@@ -17,7 +17,7 @@
             console.log(messages[i].sender);
 
             var emailElement = document.createElement('div');
-            emailElement.className='mail';
+            emailElement.className='email';
             document.getElementById('main').appendChild(emailElement);
 
             var senderElement = document.createElement('div');
@@ -46,72 +46,42 @@
 
  		email(geemails);
 
+      var emailMessages = document.getElementsByClassName('email');
+      for(var j=0; j<emailMessages.length; j++){
+         emailMessages[j].addEventListener('click', showMessage);
+      }
 
-      document.getElementById('main').addEventListener('click', function(){
-         toggle(document.querySelector('.body'));
-      });
-
-      function toggle(elements, specifiedDisplay){
-         var msg, index;
-
-         elements = elements.length ? elements:[elements];
-         for(index=0; index<elements.length; index++){
-            msg=elements[index];
-
-            if(isElementHidden(msg)){
-               msg.style.display='';
-
-               if(isElementHidden(msg)){
-                  msg.style.display=specifiedDisplay || 'block';
-               }
-            }else{
-               msg.style.display='none';
-            }
-
-            }
-               function isElementHidden(msg){
-               return window.getComputedStyle(msg,null).getPropertyValue('display') === 'none';
+      function showMessage(event){
+         var showBody=this.querySelectorAll('.body')[0];
+         if(showBody.classList.contains('show')===false){
+            return showBody.classList.add('show');
+         }
+         else{
+            return showBody.classList.remove('show');
          }
       }
 
-      toggle(geemails);
+
+      var inboxCount = document.getElementById('count');
+      inboxCount = geemails.length;
+      var totalCount = document.createTextNode(inboxCount);
+      count.appendChild(totalCount);
 
 
-      function counter(messages){
-         var total=0;
-         for(var j=0; j<messages.length; j++){
-            total += messages[j];
+      var newMsg = setInterval(newMessage, 5000);
 
-            var lastContainer = document.getElementById('main');
-            lastContainer = document.createElement('div');
-            lastContainer.id='last';
-            main.appendChild(lastContainer);
+      function newMessage(){
+         console.log(getNewMessage());
 
-            var emailCounter = document.createElement('div');
-            emailCounter.id='emailcount';
-            lastContainer.appendChild(emailCounter);
-
-            document.getElementById('emailcount').innerHTML=total;
-         }
-         return total;
+         var getMsg = document.createElement('div');
+         getMsg.className='newGetMsg';
+         document.getElementById('main');
+         getMsg.innerHTML=getNewMessage();
+         main.appendChild(getMsg);
       }
 
-      counter(geemails);
 
-
-     /* function revealEmail(hidden){
-         if(hidden.style.display == 'block')
-            hidden.style.display = 'none';
-         else
-            hidden.style.display = 'block';
-
-          var hiddenElements = document.querySelectorAll('.body');
-          hiddenElements.addEventListener('click',revealEmail,useCapture);
-
-          return hidden;
-      }
-
-      revealEmail(geemails);*/
+      newMessage(getNewMessage);
 
 
 
@@ -123,7 +93,7 @@
 	</head>
 	<body>
 		<div id="welcome">
-			<p id ="welcomemsg">Welcome to GeeMail</p>
+			<p id ="inbox">Inbox: <span id ="count"></p></span>
 		<div class="container" id="main"></div>
       <!-- <a href="body" onclick="toggle_visibility('body');"></a> -->
 

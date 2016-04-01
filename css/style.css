@@ -3,6 +3,7 @@
 body{
 	background-color: #ffff;
 	font-family:'Open Sans Condensed', sans-serif;
+	font-size: 18px;
 	padding: 20px;
 	margin: 0;
 	max-width: 1290px;
@@ -17,13 +18,6 @@ body{
 	display: inline-block;
 	align: left;*/
 }
-#welcomemsg{
-	margin-top: 70px;
-}
-
-.sender, .subjet, .date{
-	display: inline-block;
-}
 
 /*.target{
 	display: none;
@@ -35,4 +29,61 @@ div.body{
 
 div.body.show{
 	display: block;
+	text-align: center;
+	align-content: center;
+	margin-right: 40px;
+}
+
+#main{
+	background-color: rgba(230, 230, 230, 0.3);
+	width: 100%;
+	height: auto;
+}
+
+div.main{
+	display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: initial;
+}
+
+div.date{
+	display: inline-table;
+	width:auto;
+	/*margin: 0 2em 0 8em;*/
+	text-align: right;
+	align-content: left;
+	margin-left: 380px;
+	}
+div.sender{
+	display: inline-table;
+	margin: 0 0 0 3em;
+	width:auto;
+	text-align: left;
+	align-content: left;
+}
+div.subject{
+	display: inline-table;
+	width: auto;
+	margin: 0 0 0 5em;
+	text-align: center;
+	align-content: left;
+}
+
+div.email{
+	border-bottom-style: solid;
+	border-width: thin;
+	border-bottom-color: #7a7a7a;
+	display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: initial;
+}
+
+#welcome{
+	background-color: #31c7c9;
+	width: 100%;
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
 }

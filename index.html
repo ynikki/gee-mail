@@ -8,13 +8,13 @@
     <script>
       window.onload = function(){
 
-      	function email(messages){
+      	function mail(messages){
       		for(var i=0; i<messages.length; i++){
             console.log(messages[i]);
-            console.log(messages[i].subject);
-            console.log(messages[i].body);
-            console.log(messages[i].date);
             console.log(messages[i].sender);
+            console.log(messages[i].subject);
+            console.log(messages[i].date);
+            console.log(messages[i].body);
 
             var emailElement = document.createElement('div');
             emailElement.className='email';
@@ -30,21 +30,21 @@
             subjectElement.innerHTML=messages[i].subject;
             senderElement.appendChild(subjectElement);
 
-            var bodyElement = document.createElement('div');
-            bodyElement.className='body';
-            bodyElement.innerHTML=messages[i].body;
-            senderElement.appendChild(bodyElement);
-
             var dateElement = document.createElement('div');
             dateElement.className='date';
             dateElement.innerHTML=messages[i].date;
             senderElement.appendChild(dateElement);
+
+            var bodyElement = document.createElement('div');
+            bodyElement.className='body';
+            bodyElement.innerHTML=messages[i].body;
+            senderElement.appendChild(bodyElement);
            
       		}
       		return messages;
       	}
 
- 		email(geemails);
+ 		mail(geemails);
 
       var emailMessages = document.getElementsByClassName('email');
       for(var j=0; j<emailMessages.length; j++){
@@ -62,26 +62,67 @@
       }
 
 
-      var inboxCount = document.getElementById('count');
-      inboxCount = geemails.length;
-      var totalCount = document.createTextNode(inboxCount);
+      var msgCounter = document.getElementById('count');
+      msgCounter = geemails.length;
+      var totalCount = document.createTextNode(msgCounter);
       count.appendChild(totalCount);
 
+      
+      function addNewMessage(){
+      console.log(getNewMessage());
+      console.log(getNewMessage().sender);
+      console.log(getNewMessage().date);
+      console.log(getNewMessage().body);
+      console.log(getNewMessage().subject);
 
-      var newMsg = setInterval(newMessage, 5000);
+         var newMessage = getNewMessage();
 
-      function newMessage(){
-         console.log(getNewMessage());
+            msgCounter++;
+            count.innerHTML = msgCounter;
 
-         var getMsg = document.createElement('div');
-         getMsg.className='newGetMsg';
-         document.getElementById('main');
-         getMsg.innerHTML=getNewMessage();
-         main.appendChild(getMsg);
+            var emailElement = document.createElement('div');
+            emailElement.className='email';
+            document.getElementById('main').appendChild(emailElement);
+
+            var senderElement = document.createElement('div');
+            senderElement.className='sender';
+            senderElement.innerHTML=newMessage.sender;
+            emailElement.appendChild(senderElement);
+
+            var subjectElement = document.createElement('div');
+            subjectElement.className='subject';
+            subjectElement.innerHTML=newMessage.subject;
+            senderElement.appendChild(subjectElement);
+
+            var dateElement = document.createElement('div');
+            dateElement.className='date';
+            dateElement.innerHTML=newMessage.date;
+            senderElement.appendChild(dateElement);
+
+            var bodyElement = document.createElement('div');
+            bodyElement.className='body';
+            bodyElement.innerHTML=newMessage.body;
+            senderElement.appendChild(bodyElement);
+
+            var emailMessages = document.getElementsByClassName('email');
+      for(var j=0; j<emailMessages.length; j++){
+         emailMessages[j].addEventListener('click', showMessage);
+      }
+
+      function showMessage(event){
+         var showBody=this.querySelectorAll('.body')[0];
+         if(showBody.classList.contains('show')===false){
+            return showBody.classList.add('show');
+         }
+         else{
+            return showBody.classList.remove('show');
+         }
       }
 
 
-      newMessage(getNewMessage);
+      }
+
+      setInterval(addNewMessage,5000);
 
 
 
@@ -92,7 +133,7 @@
     </script>
 	</head>
 	<body>
-		<div id="welcome">
+		<div id="welcome"></div>
 			<p id ="inbox">Inbox: <span id ="count"></p></span>
 		<div class="container" id="main"></div>
       <!-- <a href="body" onclick="toggle_visibility('body');"></a> -->

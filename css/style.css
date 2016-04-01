@@ -4,24 +4,18 @@ body{
 	background-color: #ffff;
 	font-family:'Open Sans Condensed', sans-serif;
 	font-size: 18px;
-	padding: 20px;
-	margin: 0;
-	max-width: 1290px;
+	padding:0;
+	max-width: auto;
 	margin: auto;
 }
 
 #welcome{
-	text-align: left;
-	/*background-image: url('/img/geemail.gif');
-	background-repeat: no-repeat;
-	background-position: top-left;
-	display: inline-block;
-	align: left;*/
+	background-color: #31c7c9;
+	width: 100%;
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
 }
-
-/*.target{
-	display: none;
-}*/
 
 div.body{
 	display: none;
@@ -34,18 +28,27 @@ div.body.show{
 	margin-right: 40px;
 }
 
-#main{
-	background-color: rgba(230, 230, 230, 0.3);
-	width: 100%;
-	height: auto;
-}
 
 div.main{
 	display: -webkit-flex;
     -webkit-align-items: center;
     display: flex;
     align-items: initial;
+    background-color: rgba(230, 230, 230, 0.3);
+	width: 100%;
+	height: auto;
 }
+
+div.email{
+	border-bottom-style: solid;
+	border-width: thin;
+	border-bottom-color: #3a3a3a;
+	display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: initial;
+}
+
 
 div.date{
 	display: inline-table;
@@ -70,20 +73,3 @@ div.subject{
 	align-content: left;
 }
 
-div.email{
-	border-bottom-style: solid;
-	border-width: thin;
-	border-bottom-color: #7a7a7a;
-	display: -webkit-flex;
-    -webkit-align-items: center;
-    display: flex;
-    align-items: initial;
-}
-
-#welcome{
-	background-color: #31c7c9;
-	width: 100%;
-	height: 100px;
-	margin: 0px;
-	padding: 0px;
-}

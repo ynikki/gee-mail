@@ -3,19 +3,16 @@
 body{
 	background-color: #ffff;
 	font-family:'Open Sans Condensed', sans-serif;
-	font-size: 18px;
+	font-size: 20px;
 	color: #808080;
 	padding:0;
 	max-width: auto;
 	margin: 0;
+	margin-bottom: 100px;
 }
 
 #welcome{
-	background: #30c0c2;
-	background: -webkit-linear-gradient(#30c0c2,#4adfe1);
-	background: -o-linear-gradient(#30c0c2,#4adfe1);
-	background: -moz-linear-gradient(#30c0c2,#4adfe1);
-	background: linear-gradient(#30c0c2,#4adfe1);
+	background: #000;
 	width: 100%;
 	height: 100px;
 	margin: 0px;
@@ -25,10 +22,15 @@ body{
 
 #inbox{
 	display: inline-block;
-	margin: 10px 40px 10px 200px;
+	background: #30c0c2;
+	background: -webkit-linear-gradient(#30c0c2,#4adfe1);
+	background: -o-linear-gradient(#30c0c2,#4adfe1);
+	background: -moz-linear-gradient(#30c0c2,#4adfe1);
+	background: linear-gradient(#30c0c2,#4adfe1);
+	margin: 15px 40px 10px 200px;
 	padding: 2px;
 	border-radius: 7px 20px;
-	background-color: #4ae4a5;
+	font-size: 20px;
 	color:#f7fffc;
 	height: 30px;
 	width: 80px;
@@ -44,30 +46,28 @@ div.body{
 div.body.show{
 	display: inline-block;
 	text-align: center;
+	margin: 0 60px 0 60px;
 }
 
+div.email:hover{
+	color:#3fb4b6;
+}
 
 div.main{
-	/*display: -webkit-flex;
-    -webkit-align-items: center;
-    display: flex;
-    align-items: initial;*/
-    background-color: rgba(230, 230, 230, 0.3);
-	width: auto;
+	width: 500px;
 	height: auto;
 	overflow: scroll;
+	padding: 50px;
+	margin: 50px;
 }
 
 div.email{
 	border-bottom-style: solid;
 	border-width: thin;
 	border-bottom-color: #e6e6e6;
-	/*display: -webkit-flex;
-    -webkit-align-items: center;
-    display: flex;
-    align-items: initial;*/
     margin: 0px 250px 5px 250px;
     padding: 3px 0 3px 0;
+    text-align: justify-all;
 }
 
 div.date, div.subject, div.sender{
@@ -76,10 +76,10 @@ div.date, div.subject, div.sender{
 	column-gap: 20px;
 	display: inline-block;
 	height: auto;
-	text-align: center;
-	margin: 0 10px 0 10px;
-	padding: 0 20px 0 20px;
+	margin: 0 20px 0 20px;
+	padding: 0 50px 0 50px;
 }
+
 
 @keyframes move-twink-back{
 	from {background-position: 0 0;}
@@ -88,17 +88,17 @@ div.date, div.subject, div.sender{
 
 @-webkit-keyframes move-twink-back{
 	from {background-position: 0 0;}
-	to {background-position: -1000px 2000px;}
+	to {background-position: -1000px 5000px;}
 }
 
 @-moz-keyframes move-twink-back{
 	from{background-position: 0 0;}
-	to{background-position: -10000px 3000px;}
+	to{background-position: -10000px 5000px;}
 }
 
 @-ms-keyframes move-twink-back{
 	from{background-position: 0 0;}
-	to{background-position: -1000px 4000px;}
+	to{background-position: -1000px 5000px;}
 }
 
 .stars, .twinkling{
